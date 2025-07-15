@@ -7,6 +7,11 @@
     <groupId>com.ibanfr</groupId>
     <artifactId>liquibase-maven-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>moduleA</module>
+        <module>moduleB</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -29,15 +34,21 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>4.24.0</version>
+                <version>4.22.0</version>
 
                 <configuration>
-                    <propertyFile>liquibase.properties</propertyFile>
-                    <contexts>prod</contexts>
+                    <propertyFileWillOverride>true</propertyFileWillOverride>
+                    <propertyFile>target/classes/liquibase.properties</propertyFile>
                 </configuration>
 
                 <dependencies>
