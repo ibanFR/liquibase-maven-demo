@@ -7,6 +7,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>moduleB</artifactId>
-    <name>Archetype - moduleB</name>
+    <name>moduleB</name>
     <url>http://maven.apache.org</url>
+
+    <build>
+        <plugins>
+
+        </plugins>
+    </build>
 </project>
